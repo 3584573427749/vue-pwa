@@ -19,7 +19,7 @@ Denna mall är **inte**:
 - en färdig applikation
 - bunden till någon specifik backend
 - bunden till en domänmodell
-- tänkt att innehålla affärslogik eller applikationsspecifika komponenter
+- tänkt att innehålla affärslogik, use‑cases eller app‑specifika komponenter
 
 ---
 
@@ -31,11 +31,11 @@ Denna mall är **inte**:
 - PWA‑stöd via **service worker** och **web app manifest**
 - Vue Router (infrastruktur, inga domänroutes)
 - Pinia (state‑infrastruktur, inga domänstores)
-- ESLint
+- ESLint + Prettier
 - VERSION‑fil (semver)
 - Docker‑image för produktion (Nginx)
 
-TypeScript används endast för **genererade DTO‑typer** (t.ex. via OpenAPI). Applikationskoden är i övrigt vanlig JavaScript.
+TypeScript används endast för **genererade DTO‑typer** (t.ex. via OpenAPI). Övrig applikationskod är vanlig JavaScript.
 
 ---
 
@@ -59,70 +59,16 @@ Projektet följer **vedertagna Vue‑konventioner** för att kännas igen av Vue
 ```shell
 public/
 ├── manifest.webmanifest   # PWA‑manifest
-├── icons/                # PWA‑ikoner
-└── sw.js                 # Service worker (ren JavaScript)
+├── icons/                 # PWA‑ikoner
+└── sw.js                  # Service worker (ren JavaScript)
 
 src/
-├── assets/               # Statiska resurser (bilder, css)
-       ├── icons/         # Ikoner
-       ├── base.css       # Grundläggande css för färger, dark-mode och skärmstorlekar
-       └── main.css       # Bas-css med gemensamma deklarationer
-├── components/           # Återanvändbara, tekniska komponenter
-├── views/                # Routade vyer (platshållare)
-├── router/               # Vue Router‑setup
+├── assets/                # Statiska resurser (css, bilder, ikoner)
+├── components/            # Återanvändbara, tekniska komponenter
+├── views/                 # Routade vyer (platshållare)
+├── router/                # Vue Router‑setup
 ├── stores/                # Pinia‑setup (ingen domän‑state)
-├── services/             # HTTP / API / DTO‑integration
-├── pwa/                  # Vue‑sidig PWA‑logik (registrering, helpers)
+├── services/              # APIService, DTO‑integration m.m.
+├── pwa/                   # Vue‑sidig PWA‑logik (SW‑registrering, helpers)
 ├── App.vue
 └── main.js
-````
-
-Mallen innehåller endast **infrastruktur och tomma platshållare**. All domän‑ och applikationsspecifik kod läggs till i den färdiga appen.
-
-***
-
-## PWA‑stöd
-
-Mallen är konfigurerad för:
-
-*   installerbar PWA
-*   offline‑stöd för applikations‑shell
-*   automatisk uppdatering av service worker
-
-`public/sw.js` innehåller en ren, klassisk service worker utan Vue‑beroenden. Vue‑relaterad PWA‑logik (registrering, uppdateringar, install‑prompt) ligger i `src/pwa/`.
-
-***
-
-## Kör lokalt
-
-```shell
-npm install
-npm run dev
-```
-
-***
-
-## Bygg för produktion
-
-```shell
-npm run build
-```
-
-Applikationen byggs som en statisk PWA och kan serveras via den medföljande Docker‑imagen (Nginx).
-
-***
-
-## Backend‑integration
-
-Denna mall är inte bunden till någon specifik backend.
-
-Den är avsedd att kunna användas tillsammans med plattformens backend‑tjänster (t.ex. Slim‑services), men kan kopplas till vilken API‑lösning som helst.
-
-***
-
-## Versionering
-
-Mallen använder en VERSION‑fil enligt **semver**.
-
-Ändringar i mallen ska vara bakåtkompatibla i möjligaste mån för att inte bryta befintliga appar som bygger på den.
-
