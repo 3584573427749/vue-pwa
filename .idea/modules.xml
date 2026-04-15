@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../github/.idea/github.iml" filepath="$PROJECT_DIR$/../github/.idea/github.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../slim-service/.idea/slim-service.iml" filepath="$PROJECT_DIR$/../slim-service/.idea/slim-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/vue-pwa.iml" filepath="$PROJECT_DIR$/.idea/vue-pwa.iml" />
     </modules>
   </component>
