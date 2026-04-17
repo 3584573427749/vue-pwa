@@ -47,14 +47,11 @@ function closeMenu() {
   z-index: 1000;
 }
 
-/* Halvtransparent overlay */
 .app-menu__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
 }
 
-/* Själva menypanelen */
 .app-menu__panel {
   position: absolute;
   top: 0;
@@ -62,8 +59,6 @@ function closeMenu() {
   width: 75%;
   max-width: 280px;
   height: 100%;
-  background: #fff;
-  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
 }
 
 .app-menu__list {

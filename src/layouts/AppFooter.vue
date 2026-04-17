@@ -15,7 +15,6 @@ const year = new Date().getFullYear()
     </span>
   </footer>
 </template>
-
 <style scoped>
 .app-footer {
   display: flex;
@@ -26,10 +25,6 @@ const year = new Date().getFullYear()
   padding: 0 1rem;
 
   font-size: 0.75rem;
-  color: #666;
-
-  border-top: 1px solid #e0e0e0;
-  background-color: #fafafa;
 }
 
 .app-footer__version {
