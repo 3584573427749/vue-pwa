@@ -26,6 +26,7 @@
         "preview": "vite preview",
         "lint": "eslint src",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "postinstall": "mkdir -p .ci && [ -f .ci/frontend ] || touch .ci/frontend"
     }
 }
