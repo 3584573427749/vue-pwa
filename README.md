@@ -74,16 +74,6 @@ src/
 └── main.js
 ```
 
-Perfekt ✅\
-Då gör vi det sista steget i det här spåret: **vi dokumenterar design‑kontraktet tydligt i README**, så att alla som använder mallen **förstår vad som är låst, var man ändrar saker och varför strukturen ser ut som den gör**.
-
-Nedan får du **en färdig README‑sektion** som du kan klistra in rakt av. Den är skriven för:
-
-*   framtida du
-*   andra utvecklare
-*   någon som klonar mallen om 6 månader
-*   någon som *inte* varit med i den här dialogen
-
 ***
 
 # Design och tema
