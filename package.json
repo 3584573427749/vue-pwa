@@ -27,6 +27,6 @@
         "lint": "eslint src",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "postinstall": "mkdir -p .ci && [ -f .ci/frontend ] || touch .ci/frontend"
+        "postinstall": "mkdir -p .ci && touch .ci/frontend .ci/dockerdeploy"
     }
 }
